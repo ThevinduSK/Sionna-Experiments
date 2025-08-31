@@ -36,6 +36,8 @@ Instead of just code, the focus here is on the **concepts and theory** behind ra
 - Materials (like concrete, glass, metal) are frequency-dependent.  
   Example: conductivity of concrete increases with carrier frequency.
 
+![Plot](./Images/scene2.png)
+
 ---
 
 ##  Propagation Paths
@@ -49,19 +51,22 @@ Instead of just code, the focus here is on the **concepts and theory** behind ra
   - **Complex gain (a)**
   - **Angle of departure / arrival**
   - **Doppler shift** (if velocity present)
-
+![Plot](./Images/rays.png)
 ---
 
 ## From Paths to Channels
 1. **Channel Impulse Response (CIR)**  
    - Summarizes multipath propagation in the time domain.  
    - Shows delays and magnitudes of each path.
+   ![Plot](./Images/CIR.jpg)
 2. **Channel Frequency Response (CFR)**  
    - Obtained by Fourier transform of CIR.  
    - Shows frequency-selective fading across subcarriers.
+   ![Plot](./Images/CFR.jpg)
 3. **Discrete Channel Taps**  
    - Sampled CIR at Nyquist rate for simulation.  
    - Used in link-level system simulations.
+   ![Plot](./Images/taps.jpg)
 
 ---
 
@@ -71,6 +76,7 @@ Instead of just code, the focus here is on the **concepts and theory** behind ra
 - CIR becomes **time-varying**:
   - Amplitude and phase of coefficients evolve over time.
   - Captures realistic fading due to movement of TX, RX, or environment.
+  ![Plot](./Images/time.jpg)
 
 ---
 
@@ -81,6 +87,8 @@ Instead of just code, the focus here is on the **concepts and theory** behind ra
   - SINR
 - Computed with a `RadioMapSolver`.
 - Useful for **coverage analysis** and **network planning**.
+![Plot](./Images/radio_map.jpg)
+
 
 ---
 
