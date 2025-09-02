@@ -1,4 +1,4 @@
-# Introduction to Sionna RT –
+# Introduction to Sionna RT
 
 This folder documents my understanding and notes from working through the **Introduction to Sionna RT** tutorial.  
 Instead of just code, the focus here is on the **concepts and theory** behind ray tracing for wireless channels.
@@ -36,11 +36,11 @@ Instead of just code, the focus here is on the **concepts and theory** behind ra
 - Materials (like concrete, glass, metal) are frequency-dependent.  
   Example: conductivity of concrete increases with carrier frequency.
 
-![Plot](./Images/scene2.png)
+![Scene Rendering](./Images/scene2.png)
 
 ---
 
-##  Propagation Paths
+## Propagation Paths
 - Defined between **Transmitters (TX)** and **Receivers (RX)** placed in the scene.
 - Antenna arrays can be planar, dipole, or use standardized patterns (e.g., 3GPP TR 38.901).
 - The **PathSolver** computes all possible paths:
@@ -51,32 +51,40 @@ Instead of just code, the focus here is on the **concepts and theory** behind ra
   - **Complex gain (a)**
   - **Angle of departure / arrival**
   - **Doppler shift** (if velocity present)
-![Plot](./Images/rays.png)
+
+![Ray Paths](./Images/rays.png)
+
 ---
 
 ## From Paths to Channels
 1. **Channel Impulse Response (CIR)**  
    - Summarizes multipath propagation in the time domain.  
    - Shows delays and magnitudes of each path.
-   ![Plot](./Images/CIR.jpg)
+   
+   ![Channel Impulse Response](./Images/CIR.jpg)
+
 2. **Channel Frequency Response (CFR)**  
    - Obtained by Fourier transform of CIR.  
    - Shows frequency-selective fading across subcarriers.
-   ![Plot](./Images/CFR.jpg)
+   
+   ![Channel Frequency Response](./Images/CFR.jpg)
+
 3. **Discrete Channel Taps**  
    - Sampled CIR at Nyquist rate for simulation.  
    - Used in link-level system simulations.
-   ![Plot](./Images/taps.jpg)
+   
+   ![Channel Taps](./Images/taps.jpg)
 
 ---
 
-##  Mobility and Doppler
+## Mobility and Doppler
 - Every device or object can have a **velocity vector**.  
 - Ray tracing incorporates this into **path-specific Doppler shifts**.  
 - CIR becomes **time-varying**:
   - Amplitude and phase of coefficients evolve over time.
   - Captures realistic fading due to movement of TX, RX, or environment.
-  ![Plot](./Images/time.jpg)
+  
+![Time Evolution](./Images/time_evolution.jpg)
 
 ---
 
@@ -87,8 +95,8 @@ Instead of just code, the focus here is on the **concepts and theory** behind ra
   - SINR
 - Computed with a `RadioMapSolver`.
 - Useful for **coverage analysis** and **network planning**.
-![Plot](./Images/radio_map.jpg)
 
+![Radio Map](./Images/radio_map.jpg)
 
 ---
 
@@ -103,7 +111,7 @@ Instead of just code, the focus here is on the **concepts and theory** behind ra
 
 ---
 
-##  References
+## References
 - [Sionna RT Documentation](https://nvlabs.github.io/sionna/rt/)
 - [Mitsuba 3](https://mitsuba-renderer.org/)
 - [Blender-OSM](https://prochitecture.gumroad.com/l/blender-osm)
